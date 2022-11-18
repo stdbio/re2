@@ -55,7 +55,7 @@ endif()
 set(RE2_SOURCES
     re2/bitstate.cc
     re2/compile.cc
-    re2/dfa.h
+        re2/dfa.cc
     re2/filtered_re2.cc
     re2/mimics_pcre.cc
     re2/nfa.cc
