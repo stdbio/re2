@@ -20,6 +20,7 @@
 // the definition of class DFA.
 //
 // See http://swtch.com/~rsc/regexp/ for a very bare-bones equivalent.
+#pragma once
 
 #include <stddef.h>
 #include <stdint.h>
