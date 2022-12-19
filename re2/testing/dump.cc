@@ -153,7 +153,7 @@ static void DumpRegexpAppending(Regexp* re, std::string* s) {
 std::string Regexp::Dump() {
   // Make sure that we are being called from a unit test.
   // Should cause a link error if used outside of testing.
-  CHECK(!::testing::TempDir().empty());
+  RE2_CHECK(!::testing::TempDir().empty());
 
   std::string s;
   DumpRegexpAppending(this, &s);

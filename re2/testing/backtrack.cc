@@ -112,7 +112,7 @@ bool Backtracker::Search(const StringPiece& text, const StringPiece& context,
   endmatch_ = prog_->anchor_end();
   submatch_ = submatch;
   nsubmatch_ = nsubmatch;
-  CHECK_LT(2*nsubmatch_, static_cast<int>(arraysize(cap_)));
+  RE2_CHECK_LT(2 * nsubmatch_, static_cast<int>(arraysize(cap_)));
   memset(cap_, 0, sizeof cap_);
 
   // We use submatch_[0] for our own bookkeeping,
@@ -158,10 +158,10 @@ bool Backtracker::Visit(int id, const char* p) {
   // Check bitmap.  If we've already explored from here,
   // either it didn't match or it did but we're hoping for a better match.
   // Either way, don't go down that road again.
-  CHECK(p <= text_.data() + text_.size());
+  RE2_CHECK(p <= text_.data() + text_.size());
   int n = id * static_cast<int>(text_.size()+1) +
           static_cast<int>(p-text_.data());
-  CHECK_LT(n/32, visited_.size());
+  RE2_CHECK_LT(n / 32, visited_.size());
   if (visited_[n/32] & (1 << (n&31)))
     return false;
   visited_[n/32] |= 1 << (n&31);

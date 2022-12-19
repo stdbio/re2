@@ -80,7 +80,7 @@ class State {
   void SetItemsProcessed(int64_t i) { SetBenchmarkItemsProcessed(i); }
   int64_t iterations() const { return iters_; }
   // Pretend to support multiple arguments.
-  int64_t range(int pos) const { CHECK(has_arg_); return arg_; }
+  int64_t range(int pos) const { RE2_CHECK(has_arg_); return arg_; }
 
  private:
   int64_t iters_;

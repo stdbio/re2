@@ -616,7 +616,7 @@ void Prog::Flatten() {
   size_t total = 0;
   for (int i = 0; i < kNumInst; i++)
     total += inst_count_[i];
-  CHECK_EQ(total, flat.size());
+  RE2_CHECK_EQ(total, flat.size());
 #endif
 
   // Remap start_unanchored and start.

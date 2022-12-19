@@ -49,9 +49,9 @@ const char* engine_names[kEngineMax] = {
 
 // Returns the name of the engine.
 static const char* EngineName(Engine e) {
-  CHECK_GE(e, 0);
-  CHECK_LT(e, arraysize(engine_names));
-  CHECK(engine_names[e] != NULL);
+  RE2_CHECK_GE(e, 0);
+  RE2_CHECK_LT(e, arraysize(engine_names));
+  RE2_CHECK(engine_names[e] != NULL);
   return engine_names[e];
 }
 
